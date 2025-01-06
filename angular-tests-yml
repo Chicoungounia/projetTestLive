@@ -31,4 +31,4 @@ jobs:
 
       # Étape 4 : Lancer les tests
       - name: Run tests
-        run: npm test
+        run: npm test --watch=false --log-level=debug
