@@ -1,0 +1,34 @@
+name: Run Angular Tests
+
+# Déclenche le workflow sur chaque push ou pull request sur la branche principale
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Angular Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Vérifier le code du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Étape 2 : Installer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.18 # Version de Node.js utilisée
+
+      # Étape 3 : Installer les dépendances
+      - name: Install dependencies
+        run: npm install
+
+      # Étape 4 : Lancer les tests
+      - name: Run tests
+        run: npm test

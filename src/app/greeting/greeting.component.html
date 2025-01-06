@@ -1,0 +1,10 @@
+<div>
+    <!-- Champ de saisie lié à la propriété 'name' -->
+    <input [(ngModel)]="name" placeholder="Enter your name" />
+
+    <!-- Bouton pour mettre à jour le message de salutation -->
+    <button (click)="updateGreeting()">Greet</button>
+
+    <!-- Paragraphe affichant le message de salutation -->
+    <p>{{ greeting }}</p>
+</div>
